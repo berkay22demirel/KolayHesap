@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Kolay Hesap</string>
+    <string name="financial_calculator">Finans</string>
+    <string name="math_calculator">Matematik</string>
+    <string name="metal_weight_calculator">Metal Ağırlık</string>
+    <string name="structural_steel_section">Yapısal Çelik</string>
+    <string name="date_time_calculator">Tarih Zaman</string>
+    <string name="health_calculator">Sağlık</string>
 </resources>
