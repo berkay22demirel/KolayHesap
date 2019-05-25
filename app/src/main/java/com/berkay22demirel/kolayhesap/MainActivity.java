@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showAnimation() {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.animation_start);
-        ImageView girisLogo = (ImageView) findViewById(R.id.imageViewAnimationLogo);
+        ImageView girisLogo = findViewById(R.id.imageViewAnimationLogo);
         anim.reset();
         girisLogo.clearAnimation();
         girisLogo.startAnimation(anim);

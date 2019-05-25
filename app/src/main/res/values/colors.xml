@@ -11,4 +11,5 @@
     <color name="colorLightGreen">#3FB602</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorTextHint">#808080</color>
 </resources>

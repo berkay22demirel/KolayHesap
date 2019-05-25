@@ -1,9 +1,10 @@
 package com.berkay22demirel.kolayhesap;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,11 +12,66 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.berkay22demirel.kolayhesap.Enum.CategoryEnum;
+import com.berkay22demirel.kolayhesap.Util.CommonUtils;
+
 public class HomeActivity extends AppCompatActivity {
+
+    CardView cardViewMath;
+    CardView cardViewDateTime;
+    CardView cardViewHealth;
+    CardView cardViewColor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        setViewReferences();
+        addViewListeners();
+    }
+
+    private void setViewReferences() {
+        cardViewMath = findViewById(R.id.cardViewMath);
+        cardViewDateTime = findViewById(R.id.cardViewDateTime);
+        cardViewHealth = findViewById(R.id.cardViewHealth);
+        cardViewColor = findViewById(R.id.cardViewColor);
+    }
+
+    private void addViewListeners() {
+        final Intent intent = new Intent(HomeActivity.this, SubCategoriesActivity.class);
+        final Bundle bundle = new Bundle();
+        cardViewMath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle.putInt(CommonUtils.CATEGORY_ID, CategoryEnum.MATH.getId());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        cardViewDateTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle.putInt(CommonUtils.CATEGORY_ID, CategoryEnum.DATE_TIME.getId());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        cardViewHealth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle.putInt(CommonUtils.CATEGORY_ID, CategoryEnum.HEALTH.getId());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        cardViewColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bundle.putInt(CommonUtils.CATEGORY_ID, CategoryEnum.COLOR.getId());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -45,10 +101,12 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toolbar_settings:
-                Toast.makeText(this, "Ayarlar", Toast.LENGTH_SHORT).show();
+                Intent intentSettings = new Intent(HomeActivity.this, SettingsActivity.class);
+                startActivity(intentSettings);
                 break;
-            case R.id.toolbar_about_me:
-                Toast.makeText(this, "Hakkımda", Toast.LENGTH_SHORT).show();
+            case R.id.toolbar_info:
+                Intent intentInfo = new Intent(HomeActivity.this, InfoActivity.class);
+                startActivity(intentInfo);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ColorHexToRgbActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".DateAgeCalculatorActivity" />
+        <activity android:name=".ColorRgbToHexActivity" />
+        <activity android:name=".CalorieActivity" />
+        <activity android:name=".SubCategoriesActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -13,7 +13,7 @@
         android:title="Ayarlar"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/toolbar_about_me"
-        android:title="Hakkımda"
+        android:id="@+id/toolbar_info"
+        android:title="Hakkında"
         app:showAsAction="never"/>
 </menu>
